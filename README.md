@@ -1,6 +1,8 @@
-# WSrch - Windows Search API Wrapper for VC6 / C++98
+# WSrch 
 
-1998 年製の **Visual C++ 6.0 (VC6)** から最新の **Windows 11** まで動作する、.NET 非依存の Windows Search API 汎用検索エンジン (`CWSEngine`) およびサンプルプロジェクト一式です。
+CWSEngine (Windows Search C++ Wrapper)
+
+Visual C++ 6.0 (VC6 / C++98) などのレガシー環境から最新環境まで幅広く対応する、.NET 非依存の Windows Search API 汎用検索エンジン (`CWSEngine`) およびサンプルプロジェクト一式です。
 
 .NET Framework や C++/CLI を一切使用せず、純粋な Win32 API および COM (ADO / `msado15.dll`) 経由で OLE DB プロバイダ `Search.CollatorDSO` へ SQL クエリを発行します。
 
@@ -14,27 +16,11 @@
 - **柔軟な SQL 検索機能**:
   - セミコロン区切りによる複数拡張子の同時指定 (`*.txt;*.doc` など)
   - ワイルドカード (`*`) および `CONTAINS` 句による高速なインデックスキーワード検索
-  - 各種プロパティ（更新日時、作成日時、ファイル名、サイズ等）による昇順・降順ソート
+  - 各種プロパティ（更新日時、ファイル名、フルパスなど）による昇順・降順ソート
 - **即座にビルド可能な構成**: VC6 用のワークスペースファイル (`.dsw`) やプロジェクトファイル (`.dsp`) を同梱。
 
 ---
 
-## ディレクトリ・ファイル構成
-
-```text
-.
-├── WSrch.dsw           # VC6 用 ワークスペースファイル
-├── WSrch.dsp           # VC6 用 プロジェクトファイル
-├── WSEngine.inc        # Windows Search 汎用検索エンジンクラス (CWSEngine)
-├── iVariant.hxx        # VARIANT ラッパークラス
-├── tstring.hxx         # tstring (std::basic_string<TCHAR>) 定義
-├── v_tstrng.hxx        # tstring 型動的配列定義
-├── tstrmbwc.hxx        # マルチバイト/ワイド文字列変換ヘルパー
-├── Path_Fnc.hxx        # パス操作ヘルパー関数 (URL変換等)
-└── ...                 # その他のダイアログ・リソースソースファイル
-```
-
----
 
 ## 動作環境・必要要件
 
@@ -50,7 +36,7 @@
 
 ## ビルド手順 (VC6 の場合)
 
-1. リポジトリをクローンまたは ZIP 解凍します。
+1. リポジトリをクローンします。
 2. `WSrch.dsw` をダブルクリックして Visual C++ 6.0 で開きます。
 3. メニューの **[Build]** -> **[Set Active Configuration]** で `WSrch - Win32 Release` または `Win32 Debug` を選択します。
 4. **[Build]** (F7) を実行すると、ビルドが完了し実行可能ファイルが生成されます。
@@ -103,18 +89,20 @@ for (size_t i = 0; i < vvResults.size(); ++i) {
 | `SORT_DATE_DESC` / `SORT_DATE_ASC` | 更新日時 (新しい順 / 古い順) |
 | `SORT_NAME_DESC` / `SORT_NAME_ASC` | ファイル名 (Z-A / A-Z) |
 | `SORT_PATH_DESC` / `SORT_PATH_ASC` | フルパス名 (Z-A / A-Z) |
-| `SORT_SIZE_DESC` / `SORT_SIZE_ASC` | ファイルサイズ (大きい順 / 小さい順) |
-| `SORT_TYPE_DESC` / `SORT_TYPE_ASC` | タイプ (大きい順 / 小さい順) |
-| `SORT_CREATE_DESC` / `SORT_CREATE_ASC` | 作成日時 (新しい順 / 古い順) |
+
+
+
 
 ---
 
-## 著作権・ライセンス
+## 免責事項
 
-```text
-(C) 2026 Iwao. All Rights Reserved.
-Author: Iwao ( https://mish.work/ )
+本ツールおよび公開しているソースコードの使用により生じたいかなる損害についても、著作者は一切の責任を負いません。ご自身の責任において利用してください。
+引用・改変時は上記 URL ( https://mish.work/ ) を明記してください。
 
-本コードの使用により生じたいかなる損害についても著作者は責任を負いません。
-二次利用・引用時は上記 URL を明記してください。
-```
+
+---
+
+* **作者:** Iwao ( https://mish.work/ )
+* **Copyright:** (C) 2026 Iwao. All Rights Reserved.
+
