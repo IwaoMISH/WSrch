@@ -399,3 +399,16 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+
+
+#     .ilc
+_copy_.ilc
+
+# Windows System Files
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+
