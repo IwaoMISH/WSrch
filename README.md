@@ -2,7 +2,12 @@
 
 CWSEngine (Windows Search C++ Wrapper)
 
+
+## 概要
+
 Visual C++ 6.0 (VC6 / C++98) などのレガシー環境から最新環境まで幅広く対応する、.NET 非依存の Windows Search API 汎用検索エンジン (`CWSEngine`) およびサンプルプロジェクト一式です。
+
+![WSrch Sample](images/WSrch_2026_05_19.png)
 
 .NET Framework や C++/CLI を一切使用せず、純粋な Win32 API および COM (ADO / `msado15.dll`) 経由で OLE DB プロバイダ `Search.CollatorDSO` へ SQL クエリを発行します。
 
